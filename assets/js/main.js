@@ -44,6 +44,18 @@
   }
 
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var heroEl = document.querySelector('.hero');
+  if (heroEl && !prefersReducedMotion) {
+    heroEl.addEventListener('mousemove', function (e) {
+      var rect = heroEl.getBoundingClientRect();
+      var mx = (((e.clientX - rect.left) / rect.width) * 100).toFixed(1) + '%';
+      var my = (((e.clientY - rect.top) / rect.height) * 100).toFixed(1) + '%';
+      heroEl.style.setProperty('--mx', mx);
+      heroEl.style.setProperty('--my', my);
+    });
+  }
+
   if (!prefersReducedMotion) {
     document.querySelectorAll('a[data-transition]').forEach(function (link) {
       link.addEventListener('click', function (e) {

@@ -112,15 +112,96 @@
           <p>Automated diffing of DDL changes across environments, with a living record of what changed, when, and why — so "who touched this table" is a query, not an investigation.</p>
         </div>
       </div>
+
+      <div class="diagram-panel" data-reveal>
+        <div class="blueprint" aria-hidden="true">
+          <svg viewBox="0 0 940 190" xmlns="http://www.w3.org/2000/svg">
+            <path class="schema-edge" d="M160 102 L 200 102" fill="none"/>
+            <path class="schema-edge" d="M350 102 L 390 102" fill="none"/>
+            <path class="schema-edge" d="M540 102 L 580 102" fill="none"/>
+            <path class="schema-edge" d="M730 102 L 770 102" fill="none"/>
+
+            <circle class="flow-dot" cx="160" cy="102" r="3" style="--dx:40px; animation-delay:0s"/>
+            <circle class="flow-dot" cx="350" cy="102" r="3" style="--dx:40px; animation-delay:.6s"/>
+            <circle class="flow-dot" cx="540" cy="102" r="3" style="--dx:40px; animation-delay:1.2s"/>
+            <circle class="flow-dot" cx="730" cy="102" r="3" style="--dx:40px; animation-delay:1.8s"/>
+
+            <rect class="schema-box" x="10" y="70" width="150" height="64" rx="3"/>
+            <text class="schema-text-head" x="22" y="98">Sources</text>
+            <text class="schema-text" x="22" y="114">Postgres · events · APIs</text>
+
+            <rect class="schema-box" x="200" y="70" width="150" height="64" rx="3"/>
+            <text class="schema-text-head" x="212" y="98">Ingest</text>
+            <text class="schema-text" x="212" y="114">Fivetran / custom</text>
+
+            <rect class="schema-box schema-box-active" x="390" y="70" width="150" height="64" rx="3"/>
+            <circle class="schema-pulse" cx="402" cy="84" r="3"/>
+            <text class="schema-text-head" x="412" y="98">Transform</text>
+            <text class="schema-text" x="412" y="114">dbt · tests · docs</text>
+
+            <rect class="schema-box" x="580" y="70" width="150" height="64" rx="3"/>
+            <text class="schema-text-head" x="592" y="98">Warehouse</text>
+            <text class="schema-text" x="592" y="114">Snowflake marts</text>
+
+            <rect class="schema-box schema-box-cyan" x="770" y="70" width="150" height="64" rx="3"/>
+            <circle class="schema-pulse-cyan" cx="782" cy="84" r="3"/>
+            <text class="schema-text-head" x="782" y="98">BI &amp; Agents</text>
+            <text class="schema-text" x="782" y="114">dashboards · Claude</text>
+          </svg>
+          <div class="blueprint-caption">
+            <span><span class="dot">●</span> data flowing end to end</span>
+            <span>fivetran · dbt · snowflake · claude</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="ai">
     <div class="wrap">
-      <div class="section-head" data-reveal>
-        <p class="section-label">AI &amp; Claude integration</p>
-        <h2>The warehouse, made queryable in plain language</h2>
-        <p class="section-sub">We build with Claude and the Anthropic API directly on top of the platforms we operate — from agents that answer questions about your warehouse to agents that take on real data engineering and analyst work themselves.</p>
+      <div class="ai-visual">
+        <div class="section-head" data-reveal>
+          <p class="section-label">AI &amp; Claude integration</p>
+          <h2>The warehouse, made queryable in plain language</h2>
+          <p class="section-sub">We build with Claude and the Anthropic API directly on top of the platforms we operate — from agents that answer questions about your warehouse to agents that take on real data engineering and analyst work themselves.</p>
+        </div>
+
+        <div class="blueprint" aria-hidden="true" data-reveal>
+          <svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg">
+            <path class="schema-edge" d="M190 63 L 61 140" fill="none"/>
+            <path class="schema-edge" d="M190 63 L 190 140" fill="none"/>
+            <path class="schema-edge" d="M190 63 L 319 140" fill="none"/>
+            <path class="schema-edge" d="M61 182 L 190 225" fill="none"/>
+            <path class="schema-edge" d="M190 182 L 190 225" fill="none"/>
+            <path class="schema-edge" d="M319 182 L 190 225" fill="none"/>
+
+            <rect class="schema-box schema-box-active" x="120" y="15" width="140" height="48" rx="3"/>
+            <circle class="schema-pulse" cx="132" cy="29" r="3"/>
+            <text class="schema-text-head" x="140" y="35">Claude Agent</text>
+            <text class="schema-text" x="140" y="50">reads · writes · verifies</text>
+
+            <rect class="schema-box" x="6" y="140" width="110" height="42" rx="3"/>
+            <text class="schema-text-head" x="16" y="158">Snowflake</text>
+            <text class="schema-text" x="16" y="172">schema · lineage</text>
+
+            <rect class="schema-box" x="135" y="140" width="110" height="42" rx="3"/>
+            <text class="schema-text-head" x="145" y="158">dbt</text>
+            <text class="schema-text" x="145" y="172">models · tests</text>
+
+            <rect class="schema-box" x="264" y="140" width="110" height="42" rx="3"/>
+            <text class="schema-text-head" x="274" y="158">Airflow</text>
+            <text class="schema-text" x="274" y="172">DAG state</text>
+
+            <rect class="schema-box schema-box-cyan" x="110" y="225" width="160" height="44" rx="3"/>
+            <circle class="schema-pulse-cyan" cx="122" cy="239" r="3"/>
+            <text class="schema-text-head" x="130" y="245">Answer / Action</text>
+            <text class="schema-text" x="130" y="260">PR · doc · alert</text>
+          </svg>
+          <div class="blueprint-caption">
+            <span><span class="dot">●</span> live MCP session</span>
+            <span>claude · snowflake · dbt · airflow</span>
+          </div>
+        </div>
       </div>
 
       <div class="grid" data-reveal>

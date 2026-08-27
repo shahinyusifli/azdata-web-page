@@ -22,6 +22,28 @@ body{
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* ---------- Ambient background glow ---------- */
+body::before{
+  content: "";
+  position: fixed;
+  inset: -10%;
+  background:
+    radial-gradient(600px circle at 12% 15%, rgba(232,163,61,0.10), transparent 60%),
+    radial-gradient(700px circle at 88% 30%, rgba(94,234,212,0.08), transparent 60%),
+    radial-gradient(600px circle at 50% 95%, rgba(94,234,212,0.05), transparent 60%);
+  z-index: -1;
+  pointer-events: none;
+  animation: drift 24s ease-in-out infinite alternate;
+}
+@keyframes drift{
+  from{ transform: translate(0, 0) scale(1); }
+  to{ transform: translate(-2%, 2%) scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce){
+  body::before{ animation: none; }
 }
 
 .mono{ font-family: 'IBM Plex Mono', ui-monospace, monospace; }
@@ -204,14 +226,28 @@ body.is-leaving main{
 
 /* ---------- Hero ---------- */
 .hero{
+  position: relative;
   padding: 88px 0 64px;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 56px;
   align-items: center;
 }
+.hero::before{
+  content: "";
+  position: absolute;
+  inset: -60px -28px;
+  background: radial-gradient(360px circle at var(--mx, 30%) var(--my, 30%), rgba(232,163,61,0.12), transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+  transition: background .3s ease;
+}
+.hero > div{ position: relative; z-index: 1; }
 @media (max-width: 880px){
   .hero{ grid-template-columns: 1fr; padding: 56px 0 40px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .hero::before{ transition: none; }
 }
 
 .eyebrow{
@@ -329,9 +365,15 @@ h1 .accent{ color: var(--amber); }
   opacity: 0.55;
 }
 
+.schema-box-cyan{ stroke: var(--cyan); }
+.schema-pulse-cyan{ fill: var(--cyan); opacity: 0.85; }
+.flow-dot{ fill: var(--amber); }
+
 @media (prefers-reduced-motion: no-preference){
   .schema-pulse{ animation: pulse 2.6s ease-in-out infinite; }
+  .schema-pulse-cyan{ animation: pulse 2.6s ease-in-out infinite .6s; }
   .schema-edge{ animation: dash 6s linear infinite; }
+  .flow-dot{ animation: flow-move linear infinite; animation-duration: 2.6s; }
 }
 @keyframes pulse{
   0%, 100%{ opacity: 0.35; }
@@ -340,6 +382,31 @@ h1 .accent{ color: var(--amber); }
 @keyframes dash{
   to{ stroke-dashoffset: -24; }
 }
+@keyframes flow-move{
+  0%{ transform: translateX(0); opacity: 0; }
+  10%{ opacity: 1; }
+  90%{ opacity: 1; }
+  100%{ transform: translateX(var(--dx, 44px)); opacity: 0; }
+}
+
+/* ---------- Wide diagram panel (pipeline / agent illustrations) ---------- */
+.diagram-panel{
+  margin-top: 40px;
+}
+.diagram-panel .blueprint{ padding: 30px 34px; }
+
+/* ---------- AI section visual layout ---------- */
+.ai-visual{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 44px;
+}
+@media (max-width: 880px){
+  .ai-visual{ grid-template-columns: 1fr; }
+}
+.ai-visual .section-head{ margin-bottom: 0; }
 
 /* ---------- Section shell ---------- */
 section{ padding: 72px 0; border-top: 1px solid var(--line-soft); }
@@ -376,9 +443,15 @@ h2{
 .card{
   background: var(--bg-panel);
   padding: 30px 28px;
-  transition: background .2s ease;
+  position: relative;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
 }
-.card:hover{ background: var(--bg-panel-2); }
+.card:hover{
+  background: var(--bg-panel-2);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -20px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(232,163,61,0.18);
+  z-index: 1;
+}
 .card-tag{
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px;
@@ -415,6 +488,14 @@ h2{
   display: flex;
   flex-direction: column;
   gap: 16px;
+  position: relative;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.case-card:hover{
+  background: var(--bg-panel-2);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -20px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(94,234,212,0.18);
+  z-index: 1;
 }
 .case-tag{
   font-family: 'IBM Plex Mono', monospace;
