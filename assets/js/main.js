@@ -45,6 +45,40 @@
 
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  var navEl = document.querySelector('header.nav');
+  var progressEl = document.createElement('div');
+  progressEl.className = 'scroll-progress';
+  document.body.appendChild(progressEl);
+
+  var heroArt = document.querySelector('.hero .blueprint');
+  var ticking = false;
+
+  function updateOnScroll() {
+    var scrollY = window.scrollY || window.pageYOffset;
+
+    if (navEl) navEl.classList.toggle('is-scrolled', scrollY > 8);
+
+    var doc = document.documentElement;
+    var scrollable = doc.scrollHeight - doc.clientHeight;
+    var pct = scrollable > 0 ? (scrollY / scrollable) * 100 : 0;
+    progressEl.style.width = pct + '%';
+
+    if (heroArt && !prefersReducedMotion) {
+      var shift = Math.min(scrollY * 0.08, 28);
+      heroArt.style.transform = 'translateY(' + shift + 'px)';
+    }
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      window.requestAnimationFrame(updateOnScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+  updateOnScroll();
+
   var heroEl = document.querySelector('.hero');
   if (heroEl && !prefersReducedMotion) {
     heroEl.addEventListener('mousemove', function (e) {

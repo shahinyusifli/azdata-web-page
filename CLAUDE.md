@@ -26,7 +26,7 @@ A static marketing site for AZ Data, a data engineering consultancy. There is no
 Each page is organized as sequential `<section>` elements inside `<main>`, each with an anchor id (e.g. `#services`, `#ai`, `#work`, `#testimonials`, `#stack` on Home; `#approach`, `#founder` on About). When editing content, find the relevant section by its id rather than searching by content.
 
 Styling conventions in [style.css](assets/css/style.css):
-- CSS custom properties are defined once in `:root` (colors: `--bg`, `--text`, `--amber`, `--cyan`, etc.) — reuse these variables rather than hardcoding new colors.
+- CSS custom properties are defined once in `:root` (colors: `--bg`, `--text`, `--blue`, `--cyan`, etc.) — reuse these variables rather than hardcoding new colors.
 - `.mono` / `IBM Plex Mono` is used for headings, labels, and technical text; `IBM Plex Sans` is the body font.
 - Repeated layout patterns (`.grid` + `.card`, `.case-grid` + `.case-card`, `.principle` rows, `.chip` list, `.stats` + `.stat`) are reused across sections — follow the existing pattern when adding a new card or row rather than introducing a new structure.
 - The hero's schema-diagram graphic is hand-authored inline SVG (`.blueprint`), styled via the `.schema-*` classes and animated with CSS `@keyframes` (respecting `prefers-reduced-motion`).
