@@ -11,7 +11,7 @@ A static marketing site for AZ Data, a data engineering consultancy. There is no
 - [contact.html](contact.html) — Contact (contact details + a client-side-only inquiry form)
 - [assets/css/style.css](assets/css/style.css) — all styling, shared across the three pages
 - [assets/js/main.js](assets/js/main.js) — all behavior, shared across the three pages
-- [assets/img/founder-placeholder.svg](assets/img/founder-placeholder.svg) — placeholder avatar on the About page; swap for a real photo
+- [assets/img/founder.jpg](assets/img/founder.jpg) — founder headshot used on the About page
 - [CNAME](CNAME) — GitHub Pages custom domain config (`azdata.app`)
 
 ## Working with this repo
@@ -44,4 +44,4 @@ All motion respects `prefers-reduced-motion`.
 
 Several sections currently hold placeholder content (each flagged with an HTML comment in the source) — replace before this goes live:
 - **Case studies** ([index.html](index.html) `#work`) and **testimonials** (`#testimonials`) are illustrative examples, not real client engagements or quotes.
-- **Founder bio and photo** ([about.html](about.html) `#founder`) has draft bio copy and an SVG placeholder avatar instead of a real photo.
+- **Founder bio** ([about.html](about.html) `#founder`) has draft copy — personalize before publishing. The photo itself is real ([assets/img/founder.jpg](assets/img/founder.jpg)).
