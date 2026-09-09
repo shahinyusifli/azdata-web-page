@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FFFFFF">
-<title>About — AZ Data</title>
-<meta name="description" content="AZ Data OÜ is a small team in Tallinn, Estonia building a real-time context layer for Snowflake.">
+<title>Product — AZ Data</title>
+<meta name="description" content="How AZ Data works: a DDL poller watches your Snowflake schema, a renderer publishes Markdown, OKF, and graph docs to Git, and an MCP server hands structured context to agents.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,15 +14,16 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "AZ Data OÜ",
-  "url": "https://azdata.app",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Maakri 19/21, Office 1204",
-    "postalCode": "10145",
-    "addressLocality": "Tallinn",
-    "addressCountry": "EE"
+  "@type": "SoftwareApplication",
+  "name": "AZ Data",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Cloud",
+  "description": "A real-time context layer for Snowflake: a DDL poller detects schema changes, a renderer publishes Markdown/OKF/graph docs to Git, and an MCP server serves structured context to AI agents.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://azdata.app/pricing.html",
+    "priceCurrency": "USD",
+    "price": "39"
   }
 }
 </script>
@@ -84,31 +85,70 @@
 
 <main>
   <div class="wrap">
-    <section class="page-hero" data-reveal>
-      <span class="badge-pill">Data from A to Z</span>
-      <h1>About AZ Data</h1>
-      <p class="lede">Small team, real Snowflake accounts, no theatre</p>
-    </section>
-
-    <section id="story" class="section-tight">
-      <div class="story-panel" data-reveal>
-        <p>We got tired of documentation that was already stale by the time someone read it.</p>
-        <p>AZ Data is the fix: one real-time layer, published where your team already looks.</p>
+    <section class="page-hero">
+      <p class="eyebrow">Product overview</p>
+      <h1>Built for how Snowflake teams actually work</h1>
+      <p class="lede">One real-time context layer, published everywhere your team and your agents look.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="demo.html">Get a demo</a>
+        <a class="btn btn-secondary" href="#architecture">See the architecture</a>
       </div>
     </section>
 
-    <!-- No team photo grid yet — add one once there's a team big enough to make it worth a section. -->
-    <section id="office">
-      <div class="about-grid" data-reveal>
-        <div class="office-card">
-          <h3>Our office</h3>
-          <p>
-            AZ Data OÜ<br>
-            Maakri 19/21, Office 1204<br>
-            10145 Tallinn, Estonia
-          </p>
-        </div>
-        <div class="map-placeholder">Map — Maakri Kvartal, Tallinn</div>
+    <section id="architecture">
+      <div class="section-head center" data-reveal>
+        <p class="eyebrow">Architecture</p>
+        <h2>Snowflake → AZ Data → Git + MCP</h2>
+        <p class="section-sub">Three small components. The warehouse is only ever read by the poller, on a tight schedule.</p>
+      </div>
+      <div class="diagram-panel" data-reveal>
+        <svg viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg">
+          <path class="diagram-edge" d="M150 90 L 250 90" fill="none" marker-end="url(#arrow)"/>
+          <path class="diagram-edge" d="M390 90 L 490 90" fill="none" marker-end="url(#arrow)"/>
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+              <path class="diagram-arrow" d="M0 0 L8 4 L0 8 Z"/>
+            </marker>
+          </defs>
+
+          <rect class="diagram-node-box" x="10" y="55" width="140" height="70" rx="10"/>
+          <text class="diagram-node-text" x="30" y="88">Snowflake</text>
+          <text class="diagram-node-sub" x="30" y="104">your account</text>
+
+          <rect class="diagram-node-box diagram-node-box-accent" x="250" y="50" width="140" height="80" rx="10"/>
+          <text class="diagram-node-text" x="268" y="84">AZ Data</text>
+          <text class="diagram-node-sub" x="268" y="100">poll · render · serve</text>
+
+          <rect class="diagram-node-box" x="490" y="55" width="140" height="70" rx="10"/>
+          <text class="diagram-node-text" x="508" y="82">Git + MCP</text>
+          <text class="diagram-node-sub" x="508" y="98">repo · agent server</text>
+        </svg>
+      </div>
+
+      <div class="cap-grid" data-reveal>
+        <a class="cap-card" href="product-tracking.html">
+          <h3>DDL poller</h3>
+          <p>Hash-diffs INFORMATION_SCHEMA every 1–5 minutes with a least-privilege role. No ACCOUNT_USAGE lag, no full scans.</p>
+          <span class="link-arrow">Schema tracking</span>
+        </a>
+        <a class="cap-card" href="product-publishing.html">
+          <h3>Renderer</h3>
+          <p>Turns every change into Markdown, OKF, and a graph, then commits to GitHub or Bitbucket with a readable message.</p>
+          <span class="link-arrow">Git publishing</span>
+        </a>
+        <a class="cap-card" href="product-agents.html">
+          <h3>MCP server</h3>
+          <p>Serves structured, annotated context to Claude, Cursor, and your own agents — with a last-synced timestamp on every answer.</p>
+          <span class="link-arrow">Agents &amp; MCP</span>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <div class="cta-band" data-reveal>
+        <h2>See it on your own schema.</h2>
+        <p>Live walkthrough of the poller, the Git commits, and an MCP session — against your account if you'd like.</p>
+        <div class="hero-ctas"><a class="btn btn-light" href="demo.html">Get a demo</a><a class="btn btn-ghost-light" href="pricing.html">See pricing</a></div>
       </div>
     </section>
   </div>

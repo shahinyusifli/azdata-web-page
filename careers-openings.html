@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<title>Job Openings — AZ Data</title>
+<meta name="description" content="Three roles open right now at AZ Data, all based at Maakri 19/21, Tallinn: founding backend engineer, developer advocate, customer success engineer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Founding Backend Engineer",
+  "description": "Own the DDL poller and MCP server end to end.",
+  "qualifications": "4+ years building production backend services (Python or Go); hands-on experience with Snowflake or another cloud data warehouse; comfortable owning a service end-to-end, from design to on-call.",
+  "datePosted": "2026-09-09",
+  "employmentType": "FULL_TIME",
+  "hiringOrganization": { "@type": "Organization", "name": "AZ Data OÜ", "sameAs": "https://azdata.app" },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Maakri 19/21",
+      "addressLocality": "Tallinn",
+      "postalCode": "10145",
+      "addressCountry": "EE"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "EUR",
+    "value": { "@type": "QuantitativeValue", "minValue": 55000, "maxValue": 75000, "unitText": "YEAR" }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Developer Advocate",
+  "description": "Write docs, build demos, talk to early customers.",
+  "qualifications": "Experience writing technical documentation or developer-facing content; comfortable presenting to technical audiences; some hands-on SQL or data engineering background.",
+  "datePosted": "2026-09-09",
+  "employmentType": "FULL_TIME",
+  "hiringOrganization": { "@type": "Organization", "name": "AZ Data OÜ", "sameAs": "https://azdata.app" },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Maakri 19/21",
+      "addressLocality": "Tallinn",
+      "postalCode": "10145",
+      "addressCountry": "EE"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "EUR",
+    "value": { "@type": "QuantitativeValue", "minValue": 40000, "maxValue": 55000, "unitText": "YEAR" }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Customer Success Engineer",
+  "description": "Help design partners get value in week one.",
+  "qualifications": "Experience in a technical customer-facing role (CS, solutions engineering, or support); comfortable reading DDL and debugging pipeline issues with customers; excellent written English.",
+  "datePosted": "2026-09-09",
+  "employmentType": "FULL_TIME",
+  "hiringOrganization": { "@type": "Organization", "name": "AZ Data OÜ", "sameAs": "https://azdata.app" },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Maakri 19/21",
+      "addressLocality": "Tallinn",
+      "postalCode": "10145",
+      "addressCountry": "EE"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "EUR",
+    "value": { "@type": "QuantitativeValue", "minValue": 38000, "maxValue": 50000, "unitText": "YEAR" }
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="announce">
+  <div class="wrap announce-inner">
+    <span>New: AZ Data now serves schema context to any MCP client — Claude Code, Cursor, and more. <a href="product-agents.html">See how it works</a></span>
+    <button class="announce-close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="12" y="16.5" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="800" letter-spacing="-0.5" fill="#fff">AZ</text>
+        </svg>
+      </span>
+      AZ Data
+    </a>
+    <nav class="nav-links">
+      <div class="nav-item">
+        <button type="button">Product</button>
+        <div class="nav-menu">
+          <a href="product.html">Overview<small>Architecture and how the pieces fit</small></a>
+          <a href="product-tracking.html">Real-time schema tracking<small>Hash-diff every 1–5 minutes</small></a>
+          <a href="product-publishing.html">Git-native publishing<small>Markdown, OKF, graph — in your repo</small></a>
+          <a href="product-agents.html">Agents &amp; MCP<small>Structured context, no warehouse access</small></a>
+        </div>
+      </div>
+      <a href="solutions.html">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <div class="nav-item">
+        <button type="button">Resources</button>
+        <div class="nav-menu">
+          <a href="blog.html">Blog<small>Context layers, freshness, agents</small></a>
+          <a href="product.html#architecture">Architecture<small>The three components</small></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button type="button">Company</button>
+        <div class="nav-menu">
+          <a href="about.html">About<small>Small team in Tallinn</small></a>
+          <a href="careers.html">Careers<small>Culture and how we hire</small></a>
+          <a href="careers-openings.html">Open roles<small>Three roles open now</small></a>
+        </div>
+      </div>
+      <a class="nav-cta nav-cta-mobile" href="demo.html">Get a demo</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-cta" href="demo.html">Get a demo</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="page-hero" data-reveal>
+      <h1>Open roles in Tallinn</h1>
+      <p class="lede">Three roles open right now — all based at Maakri 19/21</p>
+    </section>
+
+    <!--
+      Apply links use mailto for now — swap for a real ATS once volume justifies it.
+      Requirements and salary ranges below are a first draft based on typical
+      Tallinn market rates — confirm actual figures before publishing.
+    -->
+    <section>
+      <div class="role-list" data-reveal>
+        <div class="role-row">
+          <div class="role-head">
+            <div class="role-main">
+              <h3>Founding backend engineer</h3>
+              <p>Own the DDL poller and MCP server end to end</p>
+            </div>
+            <span class="role-tag">Tallinn · Full-time</span>
+          </div>
+          <div class="role-details">
+            <div class="role-columns">
+              <div class="role-col">
+                <h4>What you'll do</h4>
+                <ul class="role-requirements">
+                  <li>Design and run the DDL poller: hash-diffing INFORMATION_SCHEMA on a 1–5 minute cadence without hammering customer accounts</li>
+                  <li>Build and maintain the MCP server that serves schema context to agents</li>
+                  <li>Own the Git publishing path — Markdown, OKF, and graph output committed to customer repos</li>
+                  <li>Set the engineering defaults: testing, on-call, observability, release process</li>
+                </ul>
+              </div>
+              <div class="role-col">
+                <h4>What we're looking for</h4>
+                <ul class="role-requirements">
+                  <li>4+ years building production backend services (Python or Go)</li>
+                  <li>Hands-on experience with Snowflake or another cloud data warehouse</li>
+                  <li>Comfortable owning a service end-to-end, from design to on-call</li>
+                  <li>Clear written communication — most of our design work happens in docs</li>
+                </ul>
+              </div>
+            </div>
+            <p class="role-nice"><strong>Nice to have:</strong> prior work on MCP, LSP, or similar structured-protocol servers; dbt or Airflow internals; a startup or founding-team stint.</p>
+            <div class="role-footer">
+              <p class="role-salary">Salary: <strong>€55,000–€75,000</strong> / year + founding equity</p>
+              <a class="role-apply" href="#apply" data-role="Founding backend engineer">Apply with CV</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="role-row">
+          <div class="role-head">
+            <div class="role-main">
+              <h3>Developer advocate</h3>
+              <p>Write docs, build demos, talk to early customers</p>
+            </div>
+            <span class="role-tag">Tallinn · Full-time</span>
+          </div>
+          <div class="role-details">
+            <div class="role-columns">
+              <div class="role-col">
+                <h4>What you'll do</h4>
+                <ul class="role-requirements">
+                  <li>Own the public docs, quickstarts, and the MCP server reference</li>
+                  <li>Build demos against real Snowflake accounts and run them on calls and at meetups</li>
+                  <li>Write the blog: specific, technical, fact-dense posts that earn citations</li>
+                  <li>Feed what you hear from early customers straight back into the roadmap</li>
+                </ul>
+              </div>
+              <div class="role-col">
+                <h4>What we're looking for</h4>
+                <ul class="role-requirements">
+                  <li>Experience writing technical documentation or developer-facing content</li>
+                  <li>Comfortable presenting to technical audiences (webinars, calls, conferences)</li>
+                  <li>Some hands-on SQL / data engineering background</li>
+                  <li>EU work authorization, or willingness to relocate to Tallinn</li>
+                </ul>
+              </div>
+            </div>
+            <p class="role-nice"><strong>Nice to have:</strong> a public body of work (blog, talks, open-source docs); familiarity with the data catalog space; Estonian or another Nordic/Baltic language.</p>
+            <div class="role-footer">
+              <p class="role-salary">Salary: <strong>€40,000–€55,000</strong> / year + equity</p>
+              <a class="role-apply" href="#apply" data-role="Developer advocate">Apply with CV</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="role-row">
+          <div class="role-head">
+            <div class="role-main">
+              <h3>Customer success engineer</h3>
+              <p>Help design partners get value in week one</p>
+            </div>
+            <span class="role-tag">Tallinn · Full-time</span>
+          </div>
+          <div class="role-details">
+            <div class="role-columns">
+              <div class="role-col">
+                <h4>What you'll do</h4>
+                <ul class="role-requirements">
+                  <li>Run onboarding for design partners: Snowflake role setup, Git connection, first sync</li>
+                  <li>Debug pipeline and permission issues alongside customer data teams</li>
+                  <li>Turn recurring support questions into docs and product fixes</li>
+                  <li>Be the customer's voice in weekly product reviews</li>
+                </ul>
+              </div>
+              <div class="role-col">
+                <h4>What we're looking for</h4>
+                <ul class="role-requirements">
+                  <li>Experience in a technical customer-facing role (CS, solutions engineering, or support)</li>
+                  <li>Comfortable reading DDL and debugging pipeline issues with customers</li>
+                  <li>Excellent written English</li>
+                  <li>Calm under pressure — you'll often be the first person a customer calls</li>
+                </ul>
+              </div>
+            </div>
+            <p class="role-nice"><strong>Nice to have:</strong> Snowflake access-control experience (roles, key-pair auth); additional Nordic/Baltic languages; prior B2B SaaS onboarding work.</p>
+            <div class="role-footer">
+              <p class="role-salary">Salary: <strong>€38,000–€50,000</strong> / year + equity</p>
+              <a class="role-apply" href="#apply" data-role="Customer success engineer">Apply with CV</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hiring-process steps and benefits are draft copy — confirm before publishing. -->
+    <section id="process" class="section-tight">
+      <div class="section-head center" data-reveal>
+        <h2>How we hire</h2>
+        <p class="section-sub">Four steps, usually inside two weeks. No whiteboard puzzles.</p>
+      </div>
+      <div class="grid" data-reveal>
+        <div class="feature-card">
+          <div class="step-num">1</div>
+          <h3>Intro call</h3>
+          <p>30 minutes with the founder. We tell you what's actually hard right now; you tell us what you want to work on.</p>
+        </div>
+        <div class="feature-card">
+          <div class="step-num">2</div>
+          <h3>Technical conversation</h3>
+          <p>60 minutes on real problems from our roadmap — a design discussion, not a quiz.</p>
+        </div>
+        <div class="feature-card">
+          <div class="step-num">3</div>
+          <h3>Paid work sample</h3>
+          <p>A scoped, paid half-day task that mirrors the job. You keep the output either way.</p>
+        </div>
+        <div class="feature-card">
+          <div class="step-num">4</div>
+          <h3>Offer</h3>
+          <p>Written offer within 48 hours of the work sample, with the full salary and equity breakdown.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="offer" class="section-tight">
+      <div class="section-head center" data-reveal>
+        <h2>What every role comes with</h2>
+      </div>
+      <div class="grid" data-reveal>
+        <div class="feature-card feature-card-amber">
+          <div class="feature-dot"></div>
+          <h3>Equity</h3>
+          <p>Every hire gets options — early enough that it means something</p>
+        </div>
+        <div class="feature-card feature-card-amber">
+          <div class="feature-dot"></div>
+          <h3>Learning budget</h3>
+          <p>Conferences, courses, books — you pick</p>
+        </div>
+        <div class="feature-card feature-card-amber">
+          <div class="feature-dot"></div>
+          <h3>Tallinn office</h3>
+          <p>Maakri 19/21, city centre — with flexible hours</p>
+        </div>
+        <div class="feature-card feature-card-amber">
+          <div class="feature-dot"></div>
+          <h3>Relocation help</h3>
+          <p>Support with the move and the Estonian paperwork if you're coming from abroad</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="culture-note" data-reveal>
+        <p>Don't see the right role open?</p>
+        <a class="btn btn-primary" href="#apply" data-role="Open application">Submit your CV</a>
+      </div>
+    </section>
+
+    <!-- Forms post to the Cloudflare Worker in /worker (API_BASE in main.js). No email address appears on the page. -->
+    <section id="apply" class="section-tight">
+      <div class="section-head center" data-reveal>
+        <p class="eyebrow">Apply</p>
+        <h2>Send us your CV</h2>
+        <p class="section-sub">Pick a role — or "Open application" if none fits — and attach a PDF or Word CV. We reply to every application.</p>
+      </div>
+      <form class="demo-form apply-form" data-form="application" data-success="Thanks — your application is in. We'll reply within a week." novalidate data-reveal>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+        <div class="form-grid">
+          <div class="field">
+            <label for="apply-role">Role</label>
+            <select id="apply-role" name="role" required>
+              <option value="Founding backend engineer">Founding backend engineer</option>
+              <option value="Developer advocate">Developer advocate</option>
+              <option value="Customer success engineer">Customer success engineer</option>
+              <option value="Open application">Open application — no specific role</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="apply-name">Full name</label>
+            <input type="text" id="apply-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="apply-email">Email</label>
+            <input type="email" id="apply-email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="apply-link">LinkedIn or portfolio (optional)</label>
+            <input type="url" id="apply-link" name="link" placeholder="https://">
+          </div>
+          <div class="field field-full">
+            <label for="apply-message">Anything you'd like us to know (optional)</label>
+            <textarea id="apply-message" name="message" rows="4"></textarea>
+          </div>
+          <div class="field field-full">
+            <label for="apply-cv">CV — PDF or Word, max 5 MB</label>
+            <input type="file" id="apply-cv" name="cv" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Send application</button>
+        <p class="form-note" role="status"></p>
+      </form>
+    </section>
+
+    <section class="section-tight">
+      <div class="referral-banner" data-reveal>
+        <h3>Know someone great? Earn €1,000 if we hire them.</h3>
+        <p>Tell us about them below — we'll take it from there and keep you posted.</p>
+        <form class="referral-form" data-form="referral" data-success="Thanks — we'll reach out to them and keep you updated." novalidate>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+          <div class="form-grid">
+            <div class="field"><label for="ref-name">Your name</label><input type="text" id="ref-name" name="name" required></div>
+            <div class="field"><label for="ref-email">Your email</label><input type="email" id="ref-email" name="email" required></div>
+            <div class="field"><label for="ref-cand">Candidate name</label><input type="text" id="ref-cand" name="candidate_name" required></div>
+            <div class="field"><label for="ref-link">Candidate LinkedIn or email</label><input type="text" id="ref-link" name="candidate_contact" required></div>
+            <div class="field field-full"><label for="ref-cv">Their CV (optional — PDF or Word, max 5 MB)</label><input type="file" id="ref-cv" name="cv" accept=".pdf,.doc,.docx"></div>
+          </div>
+          <button class="btn btn-secondary" type="submit">Send referral</button>
+          <p class="form-note" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="12" y="16.5" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="800" letter-spacing="-0.5" fill="#fff">AZ</text></svg></span>
+          AZ Data
+        </a>
+        <p>Data from A to Z. A real-time context layer for Snowflake — docs in Git, context for agents.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="product.html">Overview</a>
+        <a href="product-tracking.html">Schema tracking</a>
+        <a href="product-publishing.html">Git publishing</a>
+        <a href="product-agents.html">Agents &amp; MCP</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="solutions.html#agents">Agent grounding</a>
+        <a href="solutions.html#audit">Audit trail</a>
+        <a href="solutions.html#migration">Migration tracking</a>
+        <a href="pricing.html">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="blog.html">Blog</a>
+        <a href="product.html#architecture">Architecture</a>
+        <a href="pricing.html#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="careers-openings.html">Open roles</a>
+        <a href="demo.html">Get a demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> AZ Data OÜ — Tallinn, Estonia</span>
+      <nav><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<a class="float-cta" href="demo.html"><i></i><span>Talk to us</span></a>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

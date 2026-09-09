@@ -5,27 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FFFFFF">
-<title>About — AZ Data</title>
-<meta name="description" content="AZ Data OÜ is a small team in Tallinn, Estonia building a real-time context layer for Snowflake.">
+<title>Real-Time Schema Tracking — AZ Data</title>
+<meta name="description" content="AZ Data hash-diffs your Snowflake INFORMATION_SCHEMA every 1–5 minutes, catching renames, drops, and type changes before anyone reads stale docs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "AZ Data OÜ",
-  "url": "https://azdata.app",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Maakri 19/21, Office 1204",
-    "postalCode": "10145",
-    "addressLocality": "Tallinn",
-    "addressCountry": "EE"
-  }
-}
-</script>
 </head>
 <body>
 
@@ -84,31 +69,53 @@
 
 <main>
   <div class="wrap">
-    <section class="page-hero" data-reveal>
-      <span class="badge-pill">Data from A to Z</span>
-      <h1>About AZ Data</h1>
-      <p class="lede">Small team, real Snowflake accounts, no theatre</p>
+    <section class="page-hero">
+      <p class="eyebrow">Track</p>
+      <h1>Real-time schema tracking</h1>
+      <p class="lede">Every rename, drop, and type change in your Snowflake account — detected in minutes, not discovered in an incident.</p>
+      <div class="hero-ctas"><a class="btn btn-primary" href="demo.html">Get a demo</a><a class="btn btn-secondary" href="product.html">Product overview</a></div>
     </section>
 
-    <section id="story" class="section-tight">
-      <div class="story-panel" data-reveal>
-        <p>We got tired of documentation that was already stale by the time someone read it.</p>
-        <p>AZ Data is the fix: one real-time layer, published where your team already looks.</p>
+    <section>
+      <div class="cap-grid" data-reveal>
+        <div class="cap-card"><h3>1–5 minute polling</h3><p>A scheduled hash-diff of INFORMATION_SCHEMA. Tight enough to matter, light enough that your warehouse won't notice.</p></div>
+        <div class="cap-card"><h3>No replication lag</h3><p>ACCOUNT_USAGE can run 45 minutes to hours behind. We read INFORMATION_SCHEMA, which has none.</p></div>
+        <div class="cap-card"><h3>Least-privilege role</h3><p>A read-only role scoped to metadata. No table data is ever read or leaves your account.</p></div>
       </div>
     </section>
 
-    <!-- No team photo grid yet — add one once there's a team big enough to make it worth a section. -->
-    <section id="office">
-      <div class="about-grid" data-reveal>
-        <div class="office-card">
-          <h3>Our office</h3>
-          <p>
-            AZ Data OÜ<br>
-            Maakri 19/21, Office 1204<br>
-            10145 Tallinn, Estonia
-          </p>
+    <section class="section-soft">
+      <div class="wrap">
+        <div class="split" data-reveal>
+          <div>
+            <p class="eyebrow">How detection works</p>
+            <h2>Hash, compare, record.</h2>
+            <p>Each poll fingerprints every table, view, and column. When a fingerprint changes, AZ Data records exactly what changed, when, and — where Snowflake exposes it — who ran the DDL.</p>
+            <ul><li>Renames are tracked as renames, not as a drop plus a create</li><li>Type widenings and narrowings are flagged separately</li><li>Every change gets a stable ID you can reference in a PR or a ticket</li></ul>
+            <a class="link-arrow" href="product-publishing.html">Next: how changes get published</a>
+          </div>
+          <div class="split-art">
+            <svg viewBox="0 0 420 240" aria-hidden="true">
+              <rect class="art-box" x="20" y="24" width="170" height="44" rx="8"/><text class="art-text-b" x="34" y="43">poll #4811 · 10:42:00</text><text class="art-text" x="34" y="58">hash 9f31…c2 (unchanged)</text>
+              <rect class="art-box art-box-accent" x="20" y="98" width="170" height="44" rx="8"/><circle class="art-dot" cx="32" cy="110" r="3"/><text class="art-text-b" x="40" y="117">poll #4812 · 10:44:00</text><text class="art-text" x="34" y="132">hash 7a02…e9 (changed)</text>
+              <rect class="art-box" x="20" y="172" width="170" height="44" rx="8"/><text class="art-text-b" x="34" y="191">poll #4813 · 10:46:00</text><text class="art-text" x="34" y="206">hash 7a02…e9 (unchanged)</text>
+              <path class="art-line" d="M190 120 L236 120"/>
+              <rect class="art-box art-box-accent" x="236" y="80" width="164" height="80" rx="10"/>
+              <text class="art-text-b" x="250" y="102">change #c-2093</text>
+              <text class="art-text" x="250" y="120">FCT_BALANCES</text>
+              <text class="art-text" x="250" y="134" style="fill:#B91C1C">- balance_eur NUMBER(18,2)</text>
+              <text class="art-text" x="250" y="148" style="fill:#15803D">+ balance_minor NUMBER(18,0)</text>
+            </svg>
+          </div>
         </div>
-        <div class="map-placeholder">Map — Maakri Kvartal, Tallinn</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="cta-band" data-reveal>
+        <h2>See a change land in under five minutes.</h2>
+        <p>We'll alter a table in a demo account and watch the docs, the commit, and the agent context update live.</p>
+        <div class="hero-ctas"><a class="btn btn-light" href="demo.html">Get a demo</a></div>
       </div>
     </section>
   </div>

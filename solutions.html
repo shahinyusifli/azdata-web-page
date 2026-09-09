@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<title>Solutions — AZ Data</title>
+<meta name="description" content="What teams use AZ Data for: agent grounding, schema change alerts, audit trails, onboarding docs, migration tracking, and pipeline context.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="announce">
+  <div class="wrap announce-inner">
+    <span>New: AZ Data now serves schema context to any MCP client — Claude Code, Cursor, and more. <a href="product-agents.html">See how it works</a></span>
+    <button class="announce-close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="12" y="16.5" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="800" letter-spacing="-0.5" fill="#fff">AZ</text>
+        </svg>
+      </span>
+      AZ Data
+    </a>
+    <nav class="nav-links">
+      <div class="nav-item">
+        <button type="button">Product</button>
+        <div class="nav-menu">
+          <a href="product.html">Overview<small>Architecture and how the pieces fit</small></a>
+          <a href="product-tracking.html">Real-time schema tracking<small>Hash-diff every 1–5 minutes</small></a>
+          <a href="product-publishing.html">Git-native publishing<small>Markdown, OKF, graph — in your repo</small></a>
+          <a href="product-agents.html">Agents &amp; MCP<small>Structured context, no warehouse access</small></a>
+        </div>
+      </div>
+      <a href="solutions.html">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <div class="nav-item">
+        <button type="button">Resources</button>
+        <div class="nav-menu">
+          <a href="blog.html">Blog<small>Context layers, freshness, agents</small></a>
+          <a href="product.html#architecture">Architecture<small>The three components</small></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button type="button">Company</button>
+        <div class="nav-menu">
+          <a href="about.html">About<small>Small team in Tallinn</small></a>
+          <a href="careers.html">Careers<small>Culture and how we hire</small></a>
+          <a href="careers-openings.html">Open roles<small>Three roles open now</small></a>
+        </div>
+      </div>
+      <a class="nav-cta nav-cta-mobile" href="demo.html">Get a demo</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-cta" href="demo.html">Get a demo</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="page-hero">
+      <p class="eyebrow">Solutions</p>
+      <h1>One context layer, six jobs.</h1>
+      <p class="lede">The same real-time schema layer serves agents, auditors, new hires, and the engineers running your migration.</p>
+      <div class="hero-ctas"><a class="btn btn-primary" href="demo.html">Get a demo</a></div>
+    </section>
+
+    <section>
+      <div class="split" id="agents" data-reveal>
+        <div><p class="eyebrow">Agent grounding</p><h2>Accurate context for LLM agents, no warehouse connection.</h2><p>Agents ask the MCP server, not Snowflake. They get fresh schema, business meaning, and a timestamp — so "confidently wrong" stops being a failure mode.</p><a class="link-arrow" href="product-agents.html">Agents &amp; MCP</a></div>
+        <div class="split-art"><svg viewBox="0 0 420 200" aria-hidden="true"><rect class="art-box art-box-accent" x="150" y="16" width="120" height="36" rx="8"/><text class="art-text-b" x="170" y="38">Claude agent</text><path class="art-line" d="M210 52 L210 100"/><rect class="art-box art-box-accent" x="130" y="100" width="160" height="40" rx="8"/><circle class="art-dot-cyan" cx="146" cy="120" r="4"/><text class="art-text-b" x="158" y="124">AZ Data MCP server</text><path class="art-line" d="M210 140 L210 176"/><rect class="art-box" x="150" y="176" width="120" height="20" rx="6"/><text class="art-text" x="166" y="190">context layer · 2 min old</text><text class="art-text" x="300" y="122" style="fill:#B91C1C">✕ no warehouse queries</text></svg></div>
+      </div>
+      <div class="split reverse" id="alerts" data-reveal>
+        <div><p class="eyebrow">Schema change alerts</p><h2>Know in minutes, as a commit.</h2><p>Every rename, drop, and type change becomes a Git commit within the poll window. Subscribe your team to the repo and the alert channel is one you already read.</p><a class="link-arrow" href="product-tracking.html">Schema tracking</a></div>
+        <div class="split-art"><svg viewBox="0 0 420 200" aria-hidden="true"><rect class="art-box art-box-accent" x="20" y="30" width="380" height="50" rx="10"/><circle class="art-dot" cx="40" cy="55" r="5"/><text class="art-text-b" x="56" y="50">10:44 · FCT_BALANCES · balance_eur → balance_minor</text><text class="art-text" x="56" y="68">commit 4f2c1e · detected 2 min after DDL</text><rect class="art-box" x="20" y="100" width="380" height="50" rx="10"/><circle class="art-dot" cx="40" cy="125" r="5"/><text class="art-text-b" x="56" y="120">09:12 · DIM_MERCHANT · +country VARCHAR(2)</text><text class="art-text" x="56" y="138">commit b91d07 · detected 3 min after DDL</text></svg></div>
+      </div>
+      <div class="split" id="audit" data-reveal>
+        <div><p class="eyebrow">Audit trail</p><h2>Hand the auditor a git log.</h2><p>What changed, when, in which environment — with stable change IDs. Versioned in your own repository, so the record outlives any vendor.</p><a class="link-arrow" href="product-publishing.html">Git publishing</a></div>
+        <div class="split-art"><svg viewBox="0 0 420 200" aria-hidden="true"><text class="art-text-b" x="24" y="34">$ git log --oneline docs/finance/</text><text class="art-text" x="24" y="60">4f2c1e docs(finance): balance_eur → balance_minor</text><text class="art-text" x="24" y="80">b91d07 docs(finance): add dim_merchant.country</text><text class="art-text" x="24" y="100">e77a30 docs(finance): drop stg_txns_legacy</text><text class="art-text" x="24" y="120">a10c4b docs(finance): widen amount NUMBER(12,2)→(18,2)</text><rect class="art-box art-box-accent" x="24" y="140" width="200" height="34" rx="8"/><text class="art-text-b" x="36" y="161">SOC 2 evidence: exported ✓</text></svg></div>
+      </div>
+      <div class="split reverse" id="onboarding" data-reveal>
+        <div><p class="eyebrow">Onboarding docs</p><h2>Docs regenerated this morning, not last quarter.</h2><p>New engineers read Markdown that matches production right now, with owners and business meaning inline — and a timestamp proving it.</p><a class="link-arrow" href="product-publishing.html">Publishing formats</a></div>
+        <div class="split-art"><svg viewBox="0 0 420 200" aria-hidden="true"><rect class="art-box art-box-accent" x="24" y="20" width="372" height="160" rx="10"/><text class="art-text-b" x="40" y="46" style="font-size:11px"># PROD.FINANCE.FCT_BALANCES</text><text class="art-text" x="40" y="66" style="fill:#15803D">last synced: today 10:44</text><text class="art-text" x="40" y="90">Daily end-of-day balance per account. Grain: account_id, as_of_day.</text><text class="art-text" x="40" y="110">Owner: finance-data@ · Source: core ledger</text><text class="art-text" x="40" y="134">| column | type | meaning |</text><text class="art-text" x="40" y="150">| balance_minor | NUMBER(18,0) | integer cents |</text><text class="art-text" x="40" y="166">| currency | VARCHAR(3) | partition key for aggregates |</text></svg></div>
+      </div>
+      <div class="split" id="migration" data-reveal>
+        <div><p class="eyebrow">Migration tracking</p><h2>Watch schemas converge.</h2><p>During a replatform, point AZ Data at both sides. Every step of the cutover is a diff, and "are we there yet" has a precise answer.</p><a class="link-arrow" href="product-tracking.html">Schema tracking</a></div>
+        <div class="split-art"><svg viewBox="0 0 420 200" aria-hidden="true"><rect class="art-box" x="24" y="40" width="150" height="120" rx="10"/><text class="art-text-b" x="40" y="62">legacy · 212 tables</text><rect class="art-box art-box-accent" x="246" y="40" width="150" height="120" rx="10"/><text class="art-text-b" x="262" y="62">snowflake · 198 tables</text><path class="art-line" d="M174 100 L246 100"/><rect x="40" y="120" width="120" height="8" rx="4" fill="#E4E8F0"/><rect x="40" y="120" width="112" height="8" rx="4" fill="#2457F5"/><text class="art-text" x="40" y="146">93% converged · 14 tables remaining</text></svg></div>
+      </div>
+      <div class="split reverse" id="pipelines" data-reveal>
+        <div><p class="eyebrow">Pipeline context</p><h2>The upstream change, in the same PR.</h2><p>Because docs live next to your dbt models and DAGs, a reviewer sees the schema diff that motivated the model change — without switching tools.</p><a class="link-arrow" href="product-publishing.html">Git publishing</a></div>
+        <div class="split-art"><svg viewBox="0 0 420 200" aria-hidden="true"><rect class="art-box" x="24" y="24" width="372" height="60" rx="10"/><text class="art-text-b" x="40" y="46">PR #418 · fct_balances: use balance_minor</text><text class="art-text" x="40" y="66">models/finance/fct_balances.sql · +6 −4</text><rect class="art-box art-box-accent" x="24" y="104" width="372" height="72" rx="10"/><circle class="art-dot-cyan" cx="40" cy="122" r="4"/><text class="art-text-b" x="50" y="126">Related schema change · c-2093</text><text class="art-text" x="40" y="146" style="fill:#B91C1C">- balance_eur NUMBER(18,2)</text><text class="art-text" x="40" y="162" style="fill:#15803D">+ balance_minor NUMBER(18,0) · + currency VARCHAR(3)</text></svg></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="cta-band" data-reveal>
+        <h2>Start with the job that hurts most.</h2>
+        <p>Most teams begin with agent grounding or the audit trail and grow from there. We'll help you scope it.</p>
+        <div class="hero-ctas"><a class="btn btn-light" href="demo.html">Get a demo</a><a class="btn btn-ghost-light" href="pricing.html">See pricing</a></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="12" y="16.5" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="800" letter-spacing="-0.5" fill="#fff">AZ</text></svg></span>
+          AZ Data
+        </a>
+        <p>Data from A to Z. A real-time context layer for Snowflake — docs in Git, context for agents.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="product.html">Overview</a>
+        <a href="product-tracking.html">Schema tracking</a>
+        <a href="product-publishing.html">Git publishing</a>
+        <a href="product-agents.html">Agents &amp; MCP</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="solutions.html#agents">Agent grounding</a>
+        <a href="solutions.html#audit">Audit trail</a>
+        <a href="solutions.html#migration">Migration tracking</a>
+        <a href="pricing.html">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="blog.html">Blog</a>
+        <a href="product.html#architecture">Architecture</a>
+        <a href="pricing.html#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="careers-openings.html">Open roles</a>
+        <a href="demo.html">Get a demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> AZ Data OÜ — Tallinn, Estonia</span>
+      <nav><a href="legal.html#privacy">Privacy</a><a href="legal.html#terms">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<a class="float-cta" href="demo.html"><i></i><span>Talk to us</span></a>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

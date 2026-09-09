@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<title>Why Your LLM Shouldn't Query Your Warehouse Directly — AZ Data</title>
+<meta name="description" content="The case for a context layer between agents and the data — why direct warehouse access is the wrong default for AI agents.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why Your LLM Shouldn't Query Your Warehouse Directly",
+  "description": "The case for a context layer between agents and the data",
+  "datePublished": "2026-03-04",
+  "author": { "@type": "Organization", "name": "AZ Data" },
+  "publisher": { "@type": "Organization", "name": "AZ Data" }
+}
+</script>
+</head>
+<body>
+
+<div class="announce">
+  <div class="wrap announce-inner">
+    <span>New: AZ Data now serves schema context to any MCP client — Claude Code, Cursor, and more. <a href="../product-agents.html">See how it works</a></span>
+    <button class="announce-close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="12" y="16.5" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="800" letter-spacing="-0.5" fill="#fff">AZ</text>
+        </svg>
+      </span>
+      AZ Data
+    </a>
+    <nav class="nav-links">
+      <div class="nav-item">
+        <button type="button">Product</button>
+        <div class="nav-menu">
+          <a href="../product.html">Overview<small>Architecture and how the pieces fit</small></a>
+          <a href="../product-tracking.html">Real-time schema tracking<small>Hash-diff every 1–5 minutes</small></a>
+          <a href="../product-publishing.html">Git-native publishing<small>Markdown, OKF, graph — in your repo</small></a>
+          <a href="../product-agents.html">Agents &amp; MCP<small>Structured context, no warehouse access</small></a>
+        </div>
+      </div>
+      <a href="../solutions.html">Solutions</a>
+      <a href="../pricing.html">Pricing</a>
+      <div class="nav-item">
+        <button type="button">Resources</button>
+        <div class="nav-menu">
+          <a href="../blog.html">Blog<small>Context layers, freshness, agents</small></a>
+          <a href="../product.html#architecture">Architecture<small>The three components</small></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button type="button">Company</button>
+        <div class="nav-menu">
+          <a href="../about.html">About<small>Small team in Tallinn</small></a>
+          <a href="../careers.html">Careers<small>Culture and how we hire</small></a>
+          <a href="../careers-openings.html">Open roles<small>Three roles open now</small></a>
+        </div>
+      </div>
+      <a class="nav-cta nav-cta-mobile" href="../demo.html">Get a demo</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-cta" href="../demo.html">Get a demo</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="section-tight">
+      <article class="article" data-reveal>
+        <a class="article-back" href="../blog.html">&larr; Back to blog</a>
+        <p class="article-date">Mar 4, 2026</p>
+        <h1>Why Your LLM Shouldn't Query Your Warehouse Directly</h1>
+
+        <p>Give an agent a live connection to your warehouse and one of two things happens. Either it gets too much — raw PII, an accidental full-table scan, a query that costs real money — or it gets too little, because it's guessing at table and column names from whatever fragments of schema made it into its context window. Neither failure shows up as an error. It shows up as a confidently wrong answer.</p>
+
+        <p>The fix isn't more prompt engineering. It's a layer in between: something that watches the warehouse, keeps a real-time, versioned copy of what the schema actually looks like right now, and hands the agent structured, business-annotated context instead of raw table access. The agent never runs DDL discovery queries against production. It reads from the context layer. The context layer reads from the warehouse on a tight, scheduled poll, and nothing else does.</p>
+
+        <p>This is a boring, unglamorous piece of infrastructure right up until the day it isn't — the day an agent almost drops a column that got renamed six minutes ago, and the context layer already knew.</p>
+
+        <div class="article-cta">
+          <p>See how AZ Data's context layer works on your own schema.</p>
+          <a class="btn btn-primary" href="../demo.html">Book a demo</a>
+        </div>
+      </article>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../index.html">
+          <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="12" y="16.5" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="800" letter-spacing="-0.5" fill="#fff">AZ</text></svg></span>
+          AZ Data
+        </a>
+        <p>Data from A to Z. A real-time context layer for Snowflake — docs in Git, context for agents.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="../product.html">Overview</a>
+        <a href="../product-tracking.html">Schema tracking</a>
+        <a href="../product-publishing.html">Git publishing</a>
+        <a href="../product-agents.html">Agents &amp; MCP</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="../solutions.html#agents">Agent grounding</a>
+        <a href="../solutions.html#audit">Audit trail</a>
+        <a href="../solutions.html#migration">Migration tracking</a>
+        <a href="../pricing.html">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="../blog.html">Blog</a>
+        <a href="../product.html#architecture">Architecture</a>
+        <a href="../pricing.html#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="../about.html">About</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../careers-openings.html">Open roles</a>
+        <a href="../demo.html">Get a demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> AZ Data OÜ — Tallinn, Estonia</span>
+      <nav><a href="../legal.html#privacy">Privacy</a><a href="../legal.html#terms">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<a class="float-cta" href="../demo.html"><i></i><span>Talk to us</span></a>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

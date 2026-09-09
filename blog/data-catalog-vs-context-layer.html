@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<title>Data Catalog vs. Context Layer: They're Not the Same Thing — AZ Data</title>
+<meta name="description" content="What a decade of table lists and glossaries still gets wrong for AI — and why a context layer solves a different problem than a data catalog.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Data Catalog vs. Context Layer: They're Not the Same Thing",
+  "description": "What a decade of table lists and glossaries still gets wrong for AI",
+  "datePublished": "2026-01-19",
+  "author": { "@type": "Organization", "name": "AZ Data" },
+  "publisher": { "@type": "Organization", "name": "AZ Data" }
+}
+</script>
+</head>
+<body>
+
+<div class="announce">
+  <div class="wrap announce-inner">
+    <span>New: AZ Data now serves schema context to any MCP client — Claude Code, Cursor, and more. <a href="../product-agents.html">See how it works</a></span>
+    <button class="announce-close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="12" y="16.5" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="800" letter-spacing="-0.5" fill="#fff">AZ</text>
+        </svg>
+      </span>
+      AZ Data
+    </a>
+    <nav class="nav-links">
+      <div class="nav-item">
+        <button type="button">Product</button>
+        <div class="nav-menu">
+          <a href="../product.html">Overview<small>Architecture and how the pieces fit</small></a>
+          <a href="../product-tracking.html">Real-time schema tracking<small>Hash-diff every 1–5 minutes</small></a>
+          <a href="../product-publishing.html">Git-native publishing<small>Markdown, OKF, graph — in your repo</small></a>
+          <a href="../product-agents.html">Agents &amp; MCP<small>Structured context, no warehouse access</small></a>
+        </div>
+      </div>
+      <a href="../solutions.html">Solutions</a>
+      <a href="../pricing.html">Pricing</a>
+      <div class="nav-item">
+        <button type="button">Resources</button>
+        <div class="nav-menu">
+          <a href="../blog.html">Blog<small>Context layers, freshness, agents</small></a>
+          <a href="../product.html#architecture">Architecture<small>The three components</small></a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button type="button">Company</button>
+        <div class="nav-menu">
+          <a href="../about.html">About<small>Small team in Tallinn</small></a>
+          <a href="../careers.html">Careers<small>Culture and how we hire</small></a>
+          <a href="../careers-openings.html">Open roles<small>Three roles open now</small></a>
+        </div>
+      </div>
+      <a class="nav-cta nav-cta-mobile" href="../demo.html">Get a demo</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-cta" href="../demo.html">Get a demo</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="section-tight">
+      <article class="article" data-reveal>
+        <a class="article-back" href="../blog.html">&larr; Back to blog</a>
+        <p class="article-date">Jan 19, 2026</p>
+        <h1>Data Catalog vs. Context Layer: They're Not the Same Thing</h1>
+
+        <p>A data catalog answers "what tables exist, and who owns them." It's built for a human to browse, usually synced on a schedule measured in hours, and governed through a review workflow. That's the right design for its job. It is not the same job as answering an AI agent's actual question, which is closer to: "can I safely and correctly act on this table right now."</p>
+
+        <p>That second question needs three things most catalogs don't prioritize: freshness measured in minutes rather than hours, a machine-readable format an agent can consume without a UI in between, and enough business context (not just column names) to avoid a technically-valid, semantically-wrong query. A context layer is what you get when you design for the agent as the primary reader instead of the human.</p>
+
+        <p>None of this makes catalogs obsolete. It makes them a different layer, solving a different problem, for a different reader.</p>
+
+        <div class="article-cta">
+          <p>See how AZ Data's context layer works on your own schema.</p>
+          <a class="btn btn-primary" href="../demo.html">Book a demo</a>
+        </div>
+      </article>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../index.html">
+          <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="12" y="16.5" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="800" letter-spacing="-0.5" fill="#fff">AZ</text></svg></span>
+          AZ Data
+        </a>
+        <p>Data from A to Z. A real-time context layer for Snowflake — docs in Git, context for agents.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="../product.html">Overview</a>
+        <a href="../product-tracking.html">Schema tracking</a>
+        <a href="../product-publishing.html">Git publishing</a>
+        <a href="../product-agents.html">Agents &amp; MCP</a>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <a href="../solutions.html#agents">Agent grounding</a>
+        <a href="../solutions.html#audit">Audit trail</a>
+        <a href="../solutions.html#migration">Migration tracking</a>
+        <a href="../pricing.html">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="../blog.html">Blog</a>
+        <a href="../product.html#architecture">Architecture</a>
+        <a href="../pricing.html#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="../about.html">About</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../careers-openings.html">Open roles</a>
+        <a href="../demo.html">Get a demo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> AZ Data OÜ — Tallinn, Estonia</span>
+      <nav><a href="../legal.html#privacy">Privacy</a><a href="../legal.html#terms">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<a class="float-cta" href="../demo.html"><i></i><span>Talk to us</span></a>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

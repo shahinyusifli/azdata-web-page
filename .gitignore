@@ -1,0 +1,7 @@
+# Wrangler local build cache / state
+worker/.wrangler/
+worker/node_modules/
+node_modules/
+
+# OS
+.DS_Store

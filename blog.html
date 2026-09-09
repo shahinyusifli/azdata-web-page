@@ -5,27 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FFFFFF">
-<title>About — AZ Data</title>
-<meta name="description" content="AZ Data OÜ is a small team in Tallinn, Estonia building a real-time context layer for Snowflake.">
+<title>Blog — AZ Data</title>
+<meta name="description" content="Notes on context layers, real-time data, and building for AI agents from the AZ Data team.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "AZ Data OÜ",
-  "url": "https://azdata.app",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Maakri 19/21, Office 1204",
-    "postalCode": "10145",
-    "addressLocality": "Tallinn",
-    "addressCountry": "EE"
-  }
-}
-</script>
 </head>
 <body>
 
@@ -85,30 +70,42 @@
 <main>
   <div class="wrap">
     <section class="page-hero" data-reveal>
-      <span class="badge-pill">Data from A to Z</span>
-      <h1>About AZ Data</h1>
-      <p class="lede">Small team, real Snowflake accounts, no theatre</p>
+      <h1>From the AZ Data blog</h1>
+      <p class="lede">Notes on context layers, real-time data, and building for AI agents</p>
     </section>
 
-    <section id="story" class="section-tight">
-      <div class="story-panel" data-reveal>
-        <p>We got tired of documentation that was already stale by the time someone read it.</p>
-        <p>AZ Data is the fix: one real-time layer, published where your team already looks.</p>
-      </div>
-    </section>
-
-    <!-- No team photo grid yet — add one once there's a team big enough to make it worth a section. -->
-    <section id="office">
-      <div class="about-grid" data-reveal>
-        <div class="office-card">
-          <h3>Our office</h3>
-          <p>
-            AZ Data OÜ<br>
-            Maakri 19/21, Office 1204<br>
-            10145 Tallinn, Estonia
-          </p>
-        </div>
-        <div class="map-placeholder">Map — Maakri Kvartal, Tallinn</div>
+    <section>
+      <div class="blog-list" data-reveal>
+        <a class="blog-row" href="blog/why-your-llm-shouldnt-query-your-warehouse-directly.html">
+          <div class="blog-row-main">
+            <h3>Why Your LLM Shouldn't Query Your Warehouse Directly</h3>
+            <p>The case for a context layer between agents and the data</p>
+          </div>
+          <div class="blog-row-meta">
+            <span class="blog-date">Mar 4, 2026</span>
+            <span class="blog-read">Read</span>
+          </div>
+        </a>
+        <a class="blog-row" href="blog/data-catalog-vs-context-layer.html">
+          <div class="blog-row-main">
+            <h3>Data Catalog vs. Context Layer: They're Not the Same Thing</h3>
+            <p>What a decade of table lists and glossaries still gets wrong for AI</p>
+          </div>
+          <div class="blog-row-meta">
+            <span class="blog-date">Jan 19, 2026</span>
+            <span class="blog-read">Read</span>
+          </div>
+        </a>
+        <a class="blog-row" href="blog/stale-context-is-worse-than-no-context.html">
+          <div class="blog-row-main">
+            <h3>Stale Context Is Worse Than No Context</h3>
+            <p>Why freshness beats coverage for agent-facing docs</p>
+          </div>
+          <div class="blog-row-meta">
+            <span class="blog-date">Nov 12, 2025</span>
+            <span class="blog-read">Read</span>
+          </div>
+        </a>
       </div>
     </section>
   </div>

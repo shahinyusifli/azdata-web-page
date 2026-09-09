@@ -5,27 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FFFFFF">
-<title>About — AZ Data</title>
-<meta name="description" content="AZ Data OÜ is a small team in Tallinn, Estonia building a real-time context layer for Snowflake.">
+<title>Git-Native Publishing — AZ Data</title>
+<meta name="description" content="AZ Data renders every Snowflake schema change into Markdown, OKF, and a graph, and commits it to your own GitHub or Bitbucket repo with a readable history.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "AZ Data OÜ",
-  "url": "https://azdata.app",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Maakri 19/21, Office 1204",
-    "postalCode": "10145",
-    "addressLocality": "Tallinn",
-    "addressCountry": "EE"
-  }
-}
-</script>
 </head>
 <body>
 
@@ -84,31 +69,53 @@
 
 <main>
   <div class="wrap">
-    <section class="page-hero" data-reveal>
-      <span class="badge-pill">Data from A to Z</span>
-      <h1>About AZ Data</h1>
-      <p class="lede">Small team, real Snowflake accounts, no theatre</p>
+    <section class="page-hero">
+      <p class="eyebrow">Publish</p>
+      <h1>Git-native publishing</h1>
+      <p class="lede">Documentation as a diff. Three formats from one sync, committed to the repo your team already reviews.</p>
+      <div class="hero-ctas"><a class="btn btn-primary" href="demo.html">Get a demo</a><a class="btn btn-secondary" href="product.html">Product overview</a></div>
     </section>
 
-    <section id="story" class="section-tight">
-      <div class="story-panel" data-reveal>
-        <p>We got tired of documentation that was already stale by the time someone read it.</p>
-        <p>AZ Data is the fix: one real-time layer, published where your team already looks.</p>
+    <section>
+      <div class="cap-grid" data-reveal>
+        <div class="cap-card"><h3>Markdown</h3><p>Human-readable pages per schema and table, with business annotations, owners, and the last-synced timestamp at the top.</p></div>
+        <div class="cap-card"><h3>OKF</h3><p>A machine-readable knowledge format for tooling that wants structure without parsing prose.</p></div>
+        <div class="cap-card"><h3>Graph</h3><p>Tables, columns, and relationships as a graph you can query — the same graph the MCP server answers from.</p></div>
       </div>
     </section>
 
-    <!-- No team photo grid yet — add one once there's a team big enough to make it worth a section. -->
-    <section id="office">
-      <div class="about-grid" data-reveal>
-        <div class="office-card">
-          <h3>Our office</h3>
-          <p>
-            AZ Data OÜ<br>
-            Maakri 19/21, Office 1204<br>
-            10145 Tallinn, Estonia
-          </p>
+    <section class="section-soft">
+      <div class="wrap">
+        <div class="split reverse" data-reveal>
+          <div>
+            <p class="eyebrow">Your repo, your history</p>
+            <h2>Commits you can review, blame, and revert.</h2>
+            <p>AZ Data pushes to a branch you choose on GitHub or Bitbucket. Every schema change becomes a commit with a readable message, so "who touched this table" is <code>git log</code>, not an investigation.</p>
+            <ul><li>Open a PR per change, or commit straight to main — your call</li><li>Docs live next to your dbt models and Airflow DAGs</li><li>Nothing to host: the output is plain files in your repository</li></ul>
+            <a class="link-arrow" href="product-agents.html">Next: serving context to agents</a>
+          </div>
+          <div class="split-art">
+            <svg viewBox="0 0 420 240" aria-hidden="true">
+              <rect class="art-box art-box-accent" x="20" y="24" width="380" height="52" rx="10"/><circle class="art-dot-cyan" cx="40" cy="50" r="5"/>
+              <text class="art-text-b" x="56" y="44">4f2c1e  docs(finance): fct_balances — balance_eur → balance_minor</text>
+              <text class="art-text" x="56" y="62">azdata-bot · 2 minutes ago · +14 −6</text>
+              <rect class="art-box" x="20" y="92" width="380" height="52" rx="10"/><circle class="art-dot" cx="40" cy="118" r="5"/>
+              <text class="art-text-b" x="56" y="112">b91d07  docs(payments): add dim_merchant.country</text>
+              <text class="art-text" x="56" y="130">azdata-bot · yesterday · +9 −0</text>
+              <rect class="art-box" x="20" y="160" width="380" height="52" rx="10"/><circle class="art-dot" cx="40" cy="186" r="5"/>
+              <text class="art-text-b" x="56" y="180">e77a30  docs(staging): drop stg_txns_legacy</text>
+              <text class="art-text" x="56" y="198">azdata-bot · 3 days ago · +2 −41</text>
+            </svg>
+          </div>
         </div>
-        <div class="map-placeholder">Map — Maakri Kvartal, Tallinn</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="cta-band" data-reveal>
+        <h2>Point it at a repo. Watch the first commit land.</h2>
+        <p>Onboarding is a Snowflake role and a Git token. Most teams see their first commit within the hour.</p>
+        <div class="hero-ctas"><a class="btn btn-light" href="demo.html">Get a demo</a></div>
       </div>
     </section>
   </div>

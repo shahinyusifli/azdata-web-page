@@ -5,27 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FFFFFF">
-<title>About — AZ Data</title>
-<meta name="description" content="AZ Data OÜ is a small team in Tallinn, Estonia building a real-time context layer for Snowflake.">
+<title>Agents &amp; MCP — AZ Data</title>
+<meta name="description" content="AZ Data's MCP server gives Claude, Cursor, and your own agents structured, business-annotated Snowflake context — with zero direct warehouse access.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "AZ Data OÜ",
-  "url": "https://azdata.app",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Maakri 19/21, Office 1204",
-    "postalCode": "10145",
-    "addressLocality": "Tallinn",
-    "addressCountry": "EE"
-  }
-}
-</script>
 </head>
 <body>
 
@@ -84,31 +69,53 @@
 
 <main>
   <div class="wrap">
-    <section class="page-hero" data-reveal>
-      <span class="badge-pill">Data from A to Z</span>
-      <h1>About AZ Data</h1>
-      <p class="lede">Small team, real Snowflake accounts, no theatre</p>
+    <section class="page-hero">
+      <p class="eyebrow">Serve</p>
+      <h1>Agents &amp; MCP</h1>
+      <p class="lede">Give agents the context they need to act correctly — and nothing else. The MCP server reads from the context layer; the warehouse is never in the loop.</p>
+      <div class="hero-ctas"><a class="btn btn-primary" href="demo.html">Get a demo</a><a class="btn btn-secondary" href="product.html">Product overview</a></div>
     </section>
 
-    <section id="story" class="section-tight">
-      <div class="story-panel" data-reveal>
-        <p>We got tired of documentation that was already stale by the time someone read it.</p>
-        <p>AZ Data is the fix: one real-time layer, published where your team already looks.</p>
+    <section>
+      <div class="cap-grid" data-reveal>
+        <div class="cap-card"><h3>No direct warehouse access</h3><p>Agents never run DDL discovery against production. They ask the MCP server, which answers from the last sync.</p></div>
+        <div class="cap-card"><h3>Business meaning included</h3><p>Answers carry annotations — grain, partition keys, PII flags, owners — not just column names and types.</p></div>
+        <div class="cap-card"><h3>Freshness you can verify</h3><p>Every response includes a last-synced timestamp. If the context is stale, the agent knows, and so do you.</p></div>
       </div>
     </section>
 
-    <!-- No team photo grid yet — add one once there's a team big enough to make it worth a section. -->
-    <section id="office">
-      <div class="about-grid" data-reveal>
-        <div class="office-card">
-          <h3>Our office</h3>
-          <p>
-            AZ Data OÜ<br>
-            Maakri 19/21, Office 1204<br>
-            10145 Tallinn, Estonia
-          </p>
+    <section class="section-soft">
+      <div class="wrap">
+        <div class="split" data-reveal>
+          <div>
+            <p class="eyebrow">Works with your clients</p>
+            <h2>Claude, Cursor, Copilot, your own agents.</h2>
+            <p>Anything that speaks MCP can connect. Point your client at the AZ Data server, grant it the projects it should see, and it can answer "what changed in this table and why" against real DDL history.</p>
+            <ul><li>Per-project scoping — an agent sees only the schemas you allow</li><li>Structured tool results, not pasted Markdown</li><li>Audit log of every question an agent asked</li></ul>
+            <a class="link-arrow" href="blog/why-your-llm-shouldnt-query-your-warehouse-directly.html">Read: why your LLM shouldn't query your warehouse</a>
+          </div>
+          <div class="split-art">
+            <svg viewBox="0 0 420 240" aria-hidden="true">
+              <rect class="art-box" x="20" y="20" width="380" height="44" rx="10"/><text class="art-text-b" x="34" y="38">agent → get_table_context("PROD.FINANCE.FCT_BALANCES")</text><text class="art-text" x="34" y="54">scope: finance · client: claude-code</text>
+              <rect class="art-box art-box-accent" x="20" y="80" width="380" height="140" rx="10"/><circle class="art-dot-cyan" cx="36" cy="96" r="4"/>
+              <text class="art-text-b" x="46" y="100">AZ Data · last_synced: 2 min ago</text>
+              <text class="art-text" x="34" y="122">grain: account_id, as_of_day</text>
+              <text class="art-text" x="34" y="138">columns: account_id NUMBER · balance_minor NUMBER (integer cents)</text>
+              <text class="art-text" x="34" y="154">         currency VARCHAR(3) [partition key for aggregates]</text>
+              <text class="art-text" x="34" y="170">pii: none · owner: finance-data@</text>
+              <text class="art-text" x="34" y="186" style="fill:#15803D">recent change: c-2093 · balance_eur → balance_minor</text>
+              <text class="art-text" x="34" y="202">warehouse queries executed: 0</text>
+            </svg>
+          </div>
         </div>
-        <div class="map-placeholder">Map — Maakri Kvartal, Tallinn</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="cta-band" data-reveal>
+        <h2>Connect an agent in the demo.</h2>
+        <p>We'll wire Claude Code to the MCP server live and ask it about a table that changed a minute earlier.</p>
+        <div class="hero-ctas"><a class="btn btn-light" href="demo.html">Get a demo</a></div>
       </div>
     </section>
   </div>

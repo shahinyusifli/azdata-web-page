@@ -5,27 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FFFFFF">
-<title>About — AZ Data</title>
-<meta name="description" content="AZ Data OÜ is a small team in Tallinn, Estonia building a real-time context layer for Snowflake.">
+<title>Book a Demo — AZ Data</title>
+<meta name="description" content="See AZ Data on your own schema — 30 minutes, on a call, against a real Snowflake account if you'd like.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "AZ Data OÜ",
-  "url": "https://azdata.app",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Maakri 19/21, Office 1204",
-    "postalCode": "10145",
-    "addressLocality": "Tallinn",
-    "addressCountry": "EE"
-  }
-}
-</script>
 </head>
 <body>
 
@@ -85,30 +70,56 @@
 <main>
   <div class="wrap">
     <section class="page-hero" data-reveal>
-      <span class="badge-pill">Data from A to Z</span>
-      <h1>About AZ Data</h1>
-      <p class="lede">Small team, real Snowflake accounts, no theatre</p>
+      <h1>See AZ Data on your own schema</h1>
+      <p class="lede">30 minutes, on a call, against a real Snowflake account if you'd like</p>
     </section>
 
-    <section id="story" class="section-tight">
-      <div class="story-panel" data-reveal>
-        <p>We got tired of documentation that was already stale by the time someone read it.</p>
-        <p>AZ Data is the fix: one real-time layer, published where your team already looks.</p>
-      </div>
-    </section>
-
-    <!-- No team photo grid yet — add one once there's a team big enough to make it worth a section. -->
-    <section id="office">
-      <div class="about-grid" data-reveal>
-        <div class="office-card">
-          <h3>Our office</h3>
-          <p>
-            AZ Data OÜ<br>
-            Maakri 19/21, Office 1204<br>
-            10145 Tallinn, Estonia
-          </p>
+    <!--
+      Form posts to the Cloudflare Worker in /worker (API_BASE in main.js), which emails
+      the submission. Customer quote below is a placeholder — add a real one once available.
+    -->
+    <section>
+      <div class="demo-grid" data-reveal>
+        <div class="demo-reasons">
+          <ul class="reason-list">
+            <li><span class="reason-dot"></span> Real-time docs from your own DDL</li>
+            <li><span class="reason-dot"></span> Live walkthrough of Git commits + MCP</li>
+            <li><span class="reason-dot"></span> Leave with a scoped pilot plan</li>
+          </ul>
+          <div class="quote-placeholder">Customer quote placeholder — add once available</div>
         </div>
-        <div class="map-placeholder">Map — Maakri Kvartal, Tallinn</div>
+
+        <form class="demo-form" id="demo-form" data-form="demo" data-success="Thanks — we'll reply within one business day to set up a time." novalidate>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Work email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="account_size">Snowflake account size</label>
+            <input type="text" id="account_size" name="account_size" placeholder="e.g. ~50 users">
+          </div>
+          <div class="field">
+            <label for="preferred_time">Preferred time</label>
+            <input type="text" id="preferred_time" name="preferred_time" placeholder="e.g. Tue–Thu afternoons, CET">
+          </div>
+          <button class="btn btn-primary" type="submit">Request a demo</button>
+          <p class="form-note" role="status">We reply by email — no account or credit card needed.</p>
+        </form>
+      </div>
+
+      <div class="trust-strip" data-reveal>
+        <span class="trust-pill">No data leaves your account</span>
+        <span class="trust-pill">Least-privilege by design</span>
+        <span class="trust-pill">SOC 2 in progress</span>
       </div>
     </section>
   </div>

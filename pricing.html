@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FFFFFF">
-<title>About — AZ Data</title>
-<meta name="description" content="AZ Data OÜ is a small team in Tallinn, Estonia building a real-time context layer for Snowflake.">
+<title>Pricing — AZ Data</title>
+<meta name="description" content="Simple, per-user Snowflake schema sync pricing. Cancel anytime, no long-term contract. Starter, Team, and Enterprise plans.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,16 +14,33 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "AZ Data OÜ",
-  "url": "https://azdata.app",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Maakri 19/21, Office 1204",
-    "postalCode": "10145",
-    "addressLocality": "Tallinn",
-    "addressCountry": "EE"
-  }
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is this billed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monthly, per active user, charged to the card on file. Annual billing is available on request for Team and Enterprise plans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What counts as a seat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anyone who logs in to view schema docs or configure a sync counts as a seat. Read-only access via Git or the MCP server doesn't use a seat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change tiers later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — upgrade or downgrade at any time from your billing settings. Changes are prorated for the current billing period."
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -85,30 +102,72 @@
 <main>
   <div class="wrap">
     <section class="page-hero" data-reveal>
-      <span class="badge-pill">Data from A to Z</span>
-      <h1>About AZ Data</h1>
-      <p class="lede">Small team, real Snowflake accounts, no theatre</p>
+      <h1>Simple, per-user pricing</h1>
+      <p class="lede">Cancel anytime · no long-term contract</p>
     </section>
 
-    <section id="story" class="section-tight">
-      <div class="story-panel" data-reveal>
-        <p>We got tired of documentation that was already stale by the time someone read it.</p>
-        <p>AZ Data is the fix: one real-time layer, published where your team already looks.</p>
+    <!--
+      Starter/Team "Get started" buttons route to Book a demo since there is no
+      self-serve signup flow built yet. Wire these to a real checkout page once
+      one exists, per the plan's "signup flow" note.
+    -->
+    <section id="plans">
+      <div class="pricing-grid" data-reveal>
+        <div class="price-card">
+          <h3>Starter</h3>
+          <div class="price-amount">$39<span class="unit">/user/mo</span></div>
+          <p class="price-note">min. 3 users</p>
+          <a class="btn btn-secondary" href="demo.html">Get started</a>
+        </div>
+        <div class="price-card featured">
+          <span class="price-badge">Most popular</span>
+          <h3>Team</h3>
+          <div class="price-amount">$79<span class="unit">/user/mo</span></div>
+          <p class="price-note">min. 5 users</p>
+          <a class="btn btn-primary" href="demo.html">Get started</a>
+        </div>
+        <div class="price-card">
+          <h3>Enterprise</h3>
+          <div class="price-amount">Custom</div>
+          <p class="price-note">talk to us</p>
+          <a class="btn btn-secondary" href="demo.html">Talk to us</a>
+        </div>
       </div>
     </section>
 
-    <!-- No team photo grid yet — add one once there's a team big enough to make it worth a section. -->
-    <section id="office">
-      <div class="about-grid" data-reveal>
-        <div class="office-card">
-          <h3>Our office</h3>
-          <p>
-            AZ Data OÜ<br>
-            Maakri 19/21, Office 1204<br>
-            10145 Tallinn, Estonia
-          </p>
+    <!-- FAQ answers are a first draft — confirm actual billing/seat policy before publishing. -->
+    <section id="faq" class="section-tight">
+      <div class="section-head center" data-reveal>
+        <h2>Frequently asked</h2>
+      </div>
+      <div class="faq" data-reveal>
+        <div class="faq-item" data-open="false">
+          <button class="faq-question">
+            How is this billed?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Monthly, per active user, charged to the card on file. Annual billing is available on request for Team and Enterprise plans.</p>
+          </div>
         </div>
-        <div class="map-placeholder">Map — Maakri Kvartal, Tallinn</div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-question">
+            What counts as a seat?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Anyone who logs in to view schema docs or configure a sync counts as a seat. Read-only access via Git or the MCP server doesn't use a seat.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-question">
+            Can I change tiers later?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — upgrade or downgrade at any time from your billing settings. Changes are prorated for the current billing period.</p>
+          </div>
+        </div>
       </div>
     </section>
   </div>

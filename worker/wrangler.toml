@@ -1,0 +1,13 @@
+name = "azdata-forms"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+workers_dev = true
+preview_urls = false
+
+# Non-secret config. Secrets (never commit these) are set with:
+#   npx wrangler secret put RESEND_API_KEY
+#   npx wrangler secret put TO_EMAIL
+[vars]
+ALLOWED_ORIGINS = "https://azdata.app,https://www.azdata.app,http://localhost:8000,http://127.0.0.1:8000"
+FROM_EMAIL = "AZ Data Forms <onboarding@resend.dev>"
+MAX_FILE_BYTES = "5242880"

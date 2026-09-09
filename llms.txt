@@ -1,0 +1,22 @@
+# AZ Data
+
+> Data from A to Z. A real-time context layer for Snowflake: schema docs in Markdown, OKF, and a graph, published straight to your own Git repo, plus an MCP server that hands structured context to AI agents instead of giving them direct warehouse access.
+
+## Product
+- [Product overview & architecture](/product.html): DDL poller, renderer, MCP server
+- [Real-time schema tracking](/product-tracking.html): Hash-diff of INFORMATION_SCHEMA every 1–5 minutes
+- [Git-native publishing](/product-publishing.html): Markdown, OKF, and graph committed to GitHub or Bitbucket
+- [Agents & MCP](/product-agents.html): Structured, annotated context for Claude, Cursor, and custom agents; zero warehouse queries
+- [Solutions](/solutions.html): Agent grounding, schema change alerts, audit trail, onboarding docs, migration tracking, pipeline context
+- [Pricing](/pricing.html): Per-user plans (Starter, Team, Enterprise) and FAQ
+
+## Company
+- [About](/about.html): Team, mission, Tallinn office
+- [Careers](/careers.html): Culture and mission
+- [Job openings](/careers-openings.html): Current open roles in Tallinn, with requirements and salary ranges
+- [Get a demo](/demo.html): Schedule a 30-minute walkthrough
+
+## Blog
+- [Why Your LLM Shouldn't Query Your Warehouse Directly](/blog/why-your-llm-shouldnt-query-your-warehouse-directly.html): The case for a context layer between agents and the data
+- [Data Catalog vs. Context Layer: They're Not the Same Thing](/blog/data-catalog-vs-context-layer.html): What a decade of table lists and glossaries still gets wrong for AI
+- [Stale Context Is Worse Than No Context](/blog/stale-context-is-worse-than-no-context.html): Why freshness beats coverage for agent-facing docs
