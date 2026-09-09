@@ -20,7 +20,7 @@ A single Cloudflare Worker that receives the site's forms (demo request, job app
 
 ## Current state
 
-Deployed to `https://azdata-forms.azdata-forms.workers.dev` (Cloudflare account `2e46…743f`, Worker `azdata-forms`) and `API_BASE` already points at it. `TO_EMAIL` is set. **`RESEND_API_KEY` is not set yet** — until it is, the Worker answers every submission with `500 Server not configured` and the site shows an error note. Set it with `npx wrangler secret put RESEND_API_KEY` from this folder.
+Deployed to `https://azdata-forms.azdata-forms.workers.dev` (Cloudflare account `2e46…743f`, Worker `azdata-forms`) and `API_BASE` already points at it. Both secrets (`TO_EMAIL`, `RESEND_API_KEY`) are set and a live test submission delivered successfully on 2026-09-10. To rotate the Resend key: create a new key in Resend → API Keys, run `npx wrangler secret put RESEND_API_KEY` from this folder (or update it in the Cloudflare dashboard), confirm a form still sends, then delete the old key in Resend.
 
 ## Auto-deploy from GitHub (optional)
 
