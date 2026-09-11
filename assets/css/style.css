@@ -27,7 +27,7 @@
 }
 
 *{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; }
+html{ scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body{
   margin: 0;
   background: var(--bg);
@@ -164,13 +164,13 @@ header.nav.is-scrolled{ background: rgba(255,255,255,0.96); box-shadow: 0 10px 3
 
 .nav-toggle{
   display: none; background: none; border: 1px solid var(--line);
-  border-radius: 8px; width: 38px; height: 34px; padding: 0; cursor: pointer; position: relative;
+  border-radius: 8px; width: 44px; height: 44px; padding: 0; cursor: pointer; position: relative;
 }
 .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
-  content: ""; position: absolute; left: 9px; right: 9px; height: 1.5px;
+  content: ""; position: absolute; left: 11px; right: 11px; height: 1.5px;
   background: var(--text); transition: transform .2s ease, top .2s ease;
 }
-.nav-toggle span{ top: 16px; }
+.nav-toggle span{ top: 21px; }
 .nav-toggle span::before{ top: -6px; }
 .nav-toggle span::after{ top: 6px; }
 .nav-toggle[aria-expanded="true"] span{ background: transparent; }
@@ -613,7 +613,7 @@ h3{ font-weight: 700; }
 .demo-form{ background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 34px; box-shadow: var(--shadow-soft); }
 .field{ margin-bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
 .field label{ font-size: 13px; font-weight: 600; color: var(--muted); }
-.field input{ background: var(--bg-soft); border: 1px solid var(--line); border-radius: 10px; padding: 12px 13px; color: var(--text); font-family: inherit; font-size: 14.5px; transition: border-color .15s ease, box-shadow .15s ease; }
+.field input{ background: var(--bg-soft); border: 1px solid var(--line); border-radius: 10px; padding: 12px 13px; color: var(--text); font-family: inherit; font-size: 16px; transition: border-color .15s ease, box-shadow .15s ease; }
 .field input:focus{ outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(36,87,245,0.15); }
 .demo-form .btn{ width: 100%; justify-content: center; margin-top: 6px; }
 .form-note{ font-size: 12.5px; color: var(--muted-soft); margin-top: 10px; text-align: center; min-height: 16px; }
@@ -684,7 +684,7 @@ footer.site-footer::before{ content: ""; position: absolute; top: 0; left: 0; ri
 .field-full{ grid-column: 1 / -1; }
 .field select, .field textarea{
   background: var(--bg-soft); border: 1px solid var(--line); border-radius: 10px; padding: 12px 13px;
-  color: var(--text); font-family: inherit; font-size: 14.5px; transition: border-color .15s ease, box-shadow .15s ease;
+  color: var(--text); font-family: inherit; font-size: 16px; transition: border-color .15s ease, box-shadow .15s ease;
 }
 .field textarea{ resize: vertical; min-height: 96px; }
 .field select:focus, .field textarea:focus{ outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(36,87,245,0.15); }

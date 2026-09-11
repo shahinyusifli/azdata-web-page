@@ -10,10 +10,13 @@
 - [Solutions](/solutions.html): Agent grounding, schema change alerts, audit trail, onboarding docs, migration tracking, pipeline context
 - [Pricing](/pricing.html): Per-user plans (Starter, Team, Enterprise) and FAQ
 
+## Built with Claude
+AZ Data uses Anthropic's Claude to enhance the platform: generating change explanations and business annotations, and validating every MCP release against Claude Code. Registered in Baku, Azerbaijan (44 Jafar Jabbarli Street, Baku 1065).
+
 ## Company
-- [About](/about.html): Team, mission, Tallinn office
+- [About](/about.html): Team, mission, Baku office
 - [Careers](/careers.html): Culture and mission
-- [Job openings](/careers-openings.html): Current open roles in Tallinn, with requirements and salary ranges
+- [Job openings](/careers-openings.html): Current open roles in Baku, with requirements and salary ranges
 - [Get a demo](/demo.html): Schedule a 30-minute walkthrough
 
 ## Blog
