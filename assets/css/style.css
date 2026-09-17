@@ -311,11 +311,11 @@ h3{ font-weight: 700; }
 }
 .mockup-bar{
   display: flex; align-items: center; gap: 8px; padding: 12px 16px;
-  background: var(--bg-soft); border-bottom: 1px solid var(--line);
+  background: var(--bg-soft); border-bottom: 1px solid var(--line); min-width: 0;
 }
-.mockup-bar span{ width: 10px; height: 10px; border-radius: 50%; background: #D5DAE5; }
+.mockup-bar span{ width: 10px; height: 10px; border-radius: 50%; background: #D5DAE5; flex: none; }
 .mockup-bar span:nth-child(1){ background: #FF6B6B; } .mockup-bar span:nth-child(2){ background: #FFC542; } .mockup-bar span:nth-child(3){ background: #3DD68C; }
-.mockup-url{ margin-left: 10px; font-size: 12px; color: var(--muted-soft); background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px; }
+.mockup-url{ margin-left: 10px; font-size: 12px; color: var(--muted-soft); background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mockup-body{ display: grid; grid-template-columns: 220px 1fr 300px; min-height: 340px; }
 @media (max-width: 900px){ .mockup-body{ grid-template-columns: 1fr; } .mockup-side, .mockup-panel{ border-left: none !important; border-top: 1px solid var(--line); } }
 .mockup-side{ border-right: 1px solid var(--line); padding: 16px; font-size: 12.5px; }
@@ -623,8 +623,9 @@ h3{ font-weight: 700; }
 .trust-pill:hover{ transform: translateY(-2px); box-shadow: var(--shadow-soft); }
 
 /* ---------- Diagram (product overview) ---------- */
-.diagram-panel{ background: linear-gradient(180deg, #fff, var(--bg-soft)); border: 1px solid var(--line); border-radius: 22px; padding: 32px; margin: 32px 0; box-shadow: var(--shadow-soft); }
-.diagram-panel svg{ display: block; width: 100%; height: auto; }
+.diagram-panel{ background: linear-gradient(180deg, #fff, var(--bg-soft)); border: 1px solid var(--line); border-radius: 22px; padding: 32px; margin: 32px 0; box-shadow: var(--shadow-soft); overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.diagram-panel svg{ display: block; width: 100%; height: auto; min-width: 560px; }
+@media (max-width: 560px){ .diagram-panel{ padding: 20px 16px; } }
 .diagram-node-box{ fill: #fff; stroke: var(--line); stroke-width: 1.5; filter: drop-shadow(0 6px 10px rgba(11,29,58,0.08)); }
 .diagram-node-box-accent{ stroke: var(--blue); stroke-width: 2; }
 .diagram-node-text{ fill: var(--text); font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; }
