@@ -86,6 +86,56 @@
       <div class="hero-ctas"><a class="btn btn-primary" href="demo.html">Get a demo</a><a class="btn btn-secondary" href="product.html">Product overview</a></div>
     </section>
 
+    <section class="section-tight">
+      <div class="section-head center" data-reveal>
+        <p class="eyebrow">How it moves</p>
+        <h2>One fetch, one render, your choice of destination.</h2>
+        <p class="section-sub">AZ Data reads table and column metadata straight from Snowflake, renders it once, and writes the result wherever your team already works — no separate pipeline per target.</p>
+      </div>
+      <div class="diagram-panel" data-reveal>
+        <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrow-pub" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+              <path class="diagram-arrow" d="M0 0 L8 4 L0 8 Z"/>
+            </marker>
+          </defs>
+
+          <path class="diagram-edge" d="M150 160 L 250 160" fill="none" marker-end="url(#arrow-pub)"/>
+          <path class="diagram-edge" d="M390 160 L 450 160" fill="none"/>
+          <path class="diagram-edge" d="M450 61 L 450 259" fill="none"/>
+          <path class="diagram-edge" d="M450 61 L 490 61" fill="none" marker-end="url(#arrow-pub)"/>
+          <path class="diagram-edge" d="M450 127 L 490 127" fill="none" marker-end="url(#arrow-pub)"/>
+          <path class="diagram-edge" d="M450 193 L 490 193" fill="none" marker-end="url(#arrow-pub)"/>
+          <path class="diagram-edge" d="M450 259 L 490 259" fill="none" marker-end="url(#arrow-pub)"/>
+
+          <rect class="diagram-node-box" x="10" y="125" width="140" height="70" rx="10"/>
+          <text class="diagram-node-text" x="30" y="158">Snowflake</text>
+          <text class="diagram-node-sub" x="30" y="174">table &amp; column metadata</text>
+
+          <rect class="diagram-node-box diagram-node-box-accent" x="250" y="115" width="140" height="90" rx="10"/>
+          <text class="diagram-node-text" x="268" y="149">AZ Data</text>
+          <text class="diagram-node-sub" x="268" y="165">hash-diff · render</text>
+
+          <rect class="diagram-node-box" x="490" y="33" width="140" height="56" rx="10"/>
+          <text class="diagram-node-text" x="508" y="57">GitHub</text>
+          <text class="diagram-node-sub" x="508" y="73">your repo</text>
+
+          <rect class="diagram-node-box" x="490" y="99" width="140" height="56" rx="10"/>
+          <text class="diagram-node-text" x="508" y="123">Bitbucket</text>
+          <text class="diagram-node-sub" x="508" y="139">your repo</text>
+
+          <rect class="diagram-node-box" x="490" y="165" width="140" height="56" rx="10"/>
+          <text class="diagram-node-text" x="508" y="189">S3 bucket</text>
+          <text class="diagram-node-sub" x="508" y="205">your account</text>
+
+          <rect class="diagram-node-box" x="490" y="231" width="140" height="56" rx="10"/>
+          <text class="diagram-node-text" x="508" y="255">Confluence</text>
+          <text class="diagram-node-sub" x="508" y="271">your space</text>
+        </svg>
+      </div>
+      <p class="proof-label">Pick one destination or several — the same sync writes to all of them, and nothing is stored on AZ Data's own servers in between.</p>
+    </section>
+
     <section>
       <div class="cap-grid" data-reveal>
         <div class="cap-card"><h3>Markdown</h3><p>Human-readable pages per schema and table, with business annotations, owners, and the last-synced timestamp at the top.</p></div>
@@ -102,6 +152,7 @@
             <h2>Commits you can review, blame, and revert.</h2>
             <p>AZ Data pushes to a branch you choose on GitHub or Bitbucket. Every schema change becomes a commit with a readable message, so "who touched this table" is <code>git log</code>, not an investigation.</p>
             <ul><li>Open a PR per change, or commit straight to main — your call</li><li>Docs live next to your dbt models and Airflow DAGs</li><li>Nothing to host: the output is plain files in your repository</li></ul>
+            <p>Prefer object storage or a wiki instead of Git? The same sync can write Markdown, OKF, and graph files straight to an S3 bucket you own, or publish rendered pages into a Confluence space your team already reads. Git is the default for teams that review docs like code, not a requirement.</p>
             <a class="link-arrow" href="product-agents.html">Next: serving context to agents</a>
           </div>
           <div class="split-art">

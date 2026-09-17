@@ -5,7 +5,7 @@
 ## Product
 - [Product overview & architecture](/product.html): DDL poller, renderer, MCP server
 - [Real-time schema tracking](/product-tracking.html): Hash-diff of INFORMATION_SCHEMA every 1–5 minutes
-- [Git-native publishing](/product-publishing.html): Markdown, OKF, and graph committed to GitHub or Bitbucket
+- [Git-native publishing](/product-publishing.html): Markdown, OKF, and graph committed to GitHub or Bitbucket, or written to an S3 bucket or a Confluence space
 - [Agents & MCP](/product-agents.html): Structured, annotated context for Claude, Cursor, and custom agents; zero warehouse queries
 - [Solutions](/solutions.html): Agent grounding, schema change alerts, audit trail, onboarding docs, migration tracking, pipeline context
 - [Pricing](/pricing.html): Per-user plans (Starter, Team, Enterprise) and FAQ
