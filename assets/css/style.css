@@ -622,6 +622,19 @@ h3{ font-weight: 700; }
 .trust-pill{ background: var(--blue-soft); color: var(--blue); border-radius: 999px; padding: 10px 20px; font-size: 13.5px; font-weight: 600; transition: transform .2s ease, box-shadow .2s ease; }
 .trust-pill:hover{ transform: translateY(-2px); box-shadow: var(--shadow-soft); }
 
+.partner-strip{ display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
+.partner-badge{
+  display: inline-flex; align-items: center; gap: 12px; background: #fff;
+  border: 1px solid var(--line); border-radius: 16px; padding: 12px 22px 12px 14px;
+  box-shadow: var(--shadow-soft); transition: transform .2s ease, box-shadow .2s ease;
+}
+.partner-badge:hover{ transform: translateY(-2px); box-shadow: var(--shadow-glow); }
+.partner-badge-icon{ width: 36px; height: 36px; border-radius: 10px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; flex: none; }
+.partner-badge-icon svg{ width: 20px; height: 20px; color: var(--text); }
+.partner-badge-text{ display: flex; flex-direction: column; line-height: 1.3; text-align: left; }
+.partner-badge-text b{ font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+.partner-badge-text small{ font-size: 12px; color: var(--muted); font-weight: 500; }
+
 /* ---------- Diagram (product overview) ---------- */
 .diagram-panel{ background: linear-gradient(180deg, #fff, var(--bg-soft)); border: 1px solid var(--line); border-radius: 22px; padding: 32px; margin: 32px 0; box-shadow: var(--shadow-soft); overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .diagram-panel svg{ display: block; width: 100%; height: auto; min-width: 560px; }
